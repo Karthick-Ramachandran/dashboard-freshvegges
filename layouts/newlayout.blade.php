@@ -76,17 +76,38 @@
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/admin')}}" aria-expanded="false"><i class="mdi mdi mdi-chart-bar"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/upload/image') }}" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">Upload</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/recognition')}}" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Gait recognition</span></a></li>
+                      
+                       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/recognition')}}" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Gait recognition</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/smaralertimage')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Smart Alert with Image</span></a></li>
+                  
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/smaralert')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Smart Alert with Video</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/maps')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Maps</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('data') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Data Table</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/wanted') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Wanted</span></a></li>
+
+                  
+      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('data') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Data Table</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Live </span></a>
+
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://66.85.77.82:3000" target="_blank" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Object detection</span></a></li>
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://66.85.77.82:3001" target="_blank" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Face detection</span></a></li>
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://66.85.77.82:1234/camera.html" target="_blank" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Posenet</span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="https://66.85.77.82:3000" target="_blank" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Object detection</span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="http://66.85.77.82:3001/face_detection" target="_blank" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Face detection</span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="https://66.85.77.82:3002" target="_blank" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Posenet</span></a></li>
                             </ul>
+
                         </li>
+ <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Face Recognition </span></a>
+
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/facerec') }}" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Face Recognition</span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/numberplate') }}" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Number Plate</span></a></li>
+                            </ul>
+
+                            
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/mapp')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Mapping and Profiling</span></a></li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/changep')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Profile</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/objectdec') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Object Detection</span></a></li>
 
                     </ul>
                 </nav>

@@ -7,16 +7,9 @@
   <div class="col-xl-5 col-lg-5 col-xs-8 col-sm-8">
     @if(Session::has('failed'))
            <div class="alert alert-danger"> {{ Session::get('failed') }}</div>
-
-
-  
-
   @endif
   @if(Session::has('success'))
            <div class="alert alert-success"> {{ Session::get('success') }}</div>
-
-  
-
   @endif
     <h3>Upload Image or Video</h3>
 <form action="{{ route('upload') }}" method="POST" class="mt-4" enctype="multipart/form-data">
@@ -41,7 +34,7 @@
     function count() {
 document.getElementById('btn').disabled = false;
   var counts = document.getElementById('customFile'); 
-  if(counts.length == 1) {
+  if(counts.files.length == 1) {
     document.getElementById('counts').innerHTML = `${counts.files.length} file selected`;
 
   } else {
@@ -52,7 +45,6 @@ document.getElementById('btn').disabled = false;
   var num = document.getElementById('names');
   num.style.display = "block";
  for(var i=0; i < counts.files.length; i++) {
-   console.log(counts.files[i].name); 
     num.innerHTML += `<h6 class="text-center"> ${counts.files[i].name} </h6>`;
   }
  }
