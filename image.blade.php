@@ -18,6 +18,16 @@
         <input type="file" onchange="count()" name="image[]" class="custom-file-input" id="customFile" multiple>
         <label class="custom-file-label" for="customFile">Choose file</label>
       </div>
+      <div class="form-check mt-4">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" value="wanted" name="repo" checked>Wanted
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" value="repo" name="repo">Repo
+  </label>
+</div>
       <center>
           <h4 class="mt-3 center" id="counts"></h4>
           <div class="alert alert-success" style="display:none"  id="names">
@@ -50,3 +60,4 @@ document.getElementById('btn').disabled = false;
  }
 </script>
 @endsection
+
