@@ -83,7 +83,7 @@
                   
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/smaralert')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Smart Alert with Video</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/maps')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Maps</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/wanted') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Wanted</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/want') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Wanted</span></a></li>
 
                   
       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('data') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Data Table</span></a></li>
