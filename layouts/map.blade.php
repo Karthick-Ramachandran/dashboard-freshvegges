@@ -8,25 +8,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <link href=".{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    
+  
+    <title>Freshveggies</title>
+    <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
-  
-<script type="text/javascript" src="{{ asset('vis-4.21.0/dist/vis.js') }}"></script>
-    <link href="{{ asset('vis-4.21.0/dist/vis.css') }}" rel="stylesheet" type="text/css" />
-    <title>Freshveggies</title>
-    <link href="{{ asset('assets/libs/flot/css/float-chart.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
-  <style>
-        .map { height: 680px;
-        width: 700px; }
-#mynetwork {
-            width: 1200px;
-            height: 800px;
-            border: 1px solid rgb(235, 8, 8);
-        }
+</head>
+<style>
+#mapid { height: 680px; }
 label {
     display: block;
     font: 1rem 'Fira Sans', sans-serif;
@@ -36,63 +28,13 @@ input,
 label {
     margin: .4rem 0;
 }
-div.vis-network div.vis-navigation div.vis-button.vis-up, 
-div.vis-network div.vis-navigation div.vis-button.vis-down, 
-div.vis-network div.vis-navigation div.vis-button.vis-left, 
-div.vis-network div.vis-navigation div.vis-button.vis-right, 
-div.vis-network div.vis-navigation div.vis-button.vis-zoomIn, 
-div.vis-network div.vis-navigation div.vis-button.vis-zoomOut, 
-div.vis-network div.vis-navigation div.vis-button.vis-zoomExtends {
-  background-image: none !important;
-}
 
-div.vis-network div.vis-navigation div.vis-button:hover {
-  box-shadow: none !important;
-}
-
-.vis-button:after {
-  font-size: 2em;
-  color: gray;
-}
-
-.vis-button:hover:after {
-  font-size: 2em;
-  color: lightgray;
-}
-
-.vis-button.vis-up:after {
-  content: "▲";
-}
-
-.vis-button.vis-down:after {
-  content: "▼";
-}
-
-.vis-button.vis-left:after {
-  content: "◀";
-}
-
-.vis-button.vis-right:after {
-  content: "▶";
-}
-
-.vis-button.vis-zoomIn:after {
-  content: "+";
-  font-weight: bold;
-}
-
-.vis-button.vis-zoomOut:after {
-  content: "−";
-  font-weight: bold;
-}
-
-.vis-button.vis-zoomExtends:after {
-  content: "⤧";
-}
-  </style>
+</style>
+   
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
 integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
 crossorigin=""></script>
+
 </head>
 
 <body>
@@ -147,11 +89,12 @@ crossorigin=""></script>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/upload/image') }}" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">Upload</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/recognition')}}" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Gait recognition</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/smaralertimage')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Smart Alert with Image</span></a></li>
-                                            
+                 
+
+                       
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/smaralert')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Smart Alert with Video</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/maps')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Maps</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/want') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Wanted</span></a></li>
-
                        
  <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('data') }}"" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Data Table</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Live </span></a>
@@ -163,42 +106,23 @@ crossorigin=""></script>
                             </ul>
 
                         </li>
- <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Output </span></a>
 
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/facerec') }}" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Face Recognition</span></a></li>
-
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/numberplate') }}" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Number Plate</span></a></li>
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/objectdec')}}" target="_blank" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Object Detection</span></a></li>
-
-                            </ul>
-
-
-                            
-                        </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/mapp')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Mapping and Profiling</span></a></li>
 
                                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('/changep')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Profile</span></a></li>
-                        
-
-
-                    </ul>
+                                           </ul>
                 </nav>
             </div>
         </aside>
     <div class="row">
         <div class="col-xl-3 col-lg-3 col-md-3">
-
         </div>
         <div class="col-xl-9 col-lg-9 col-md-9">
                 @yield('content')
-
         </div>
     </div>
-
     </div>
     <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="{{ asset('assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
@@ -218,11 +142,8 @@ crossorigin=""></script>
     <script>
         $('#zero_config').DataTable();
     </script>
-
     <script src="{{ asset('assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
     <script src="{{asset('dist/js/pages/chart/chart-page-init.js')}}"></script>
-
     
 </body>
 </html>
-            
